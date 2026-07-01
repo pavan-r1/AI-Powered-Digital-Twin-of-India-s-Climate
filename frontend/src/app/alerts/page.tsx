@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 import {
   AlertTriangle,
   CloudRain,
@@ -6,10 +7,14 @@ import {
   Wind,
   Waves,
 } from "lucide-react";
+=======
+export const dynamic = "force-dynamic";
+>>>>>>> 02d3f33 (Add frontend application)
 
 import { PageHeading, Panel } from "@/components/page-panels";
 
 const alerts = [
+<<<<<<< HEAD
   {
     title: "Heavy Rainfall Alert",
     region: "Northeast India",
@@ -156,6 +161,36 @@ export default function AlertsPage() {
               Total Active Alerts
             </p>
           </div>
+=======
+  { title: "Heavy Rainfall Alert", region: "Northeast India", level: "High", span: 3 },
+  { title: "Heatwave Warning", region: "Central India", level: "Medium", span: 4 },
+  { title: "Thunderstorm Alert", region: "East India", level: "Low", span: 2 },
+];
+
+export default function AlertsPage() {
+  const startDate = new Date();
+  const titleDate = startDate.toLocaleDateString("en-IN", { day: "numeric", month: "short", year: "numeric" });
+
+  return (
+    <div className="space-y-4">
+      <Panel>
+        <PageHeading title={`5. Extreme Weather Alerts · ${titleDate}`} subtitle="Prioritized active alerts with severity badges" />
+        <div className="mt-4 grid gap-4 xl:grid-cols-3">
+          {alerts.map((alert) => (
+            <article key={alert.title} className="rounded-[1.5rem] border border-slate-200 bg-slate-50 p-4 dark:border-white/10 dark:bg-white/5">
+              <div className="flex items-start justify-between gap-3">
+                <div>
+                  <p className="font-semibold text-slate-950 dark:text-white">{alert.title}</p>
+                  <p className="mt-1 text-sm text-slate-500 dark:text-slate-300">{alert.region}</p>
+                </div>
+                <span className={`rounded-full px-3 py-1 text-xs font-medium ${alert.level === "High" ? "bg-rose-100 text-rose-700" : alert.level === "Medium" ? "bg-amber-100 text-amber-700" : "bg-emerald-100 text-emerald-700"}`}>{alert.level}</span>
+              </div>
+              <p className="mt-4 text-sm text-slate-500 dark:text-slate-300">
+                Active from {startDate.toLocaleDateString("en-IN", { day: "numeric", month: "short" })} to {new Date(Date.now() + alert.span * 86400000).toLocaleDateString("en-IN", { day: "numeric", month: "short" })}
+              </p>
+            </article>
+          ))}
+>>>>>>> 02d3f33 (Add frontend application)
         </div>
       </Panel>
     </div>

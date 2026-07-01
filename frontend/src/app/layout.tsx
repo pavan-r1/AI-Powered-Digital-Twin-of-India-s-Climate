@@ -16,7 +16,11 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
+<<<<<<< HEAD
       <body>
+=======
+      <body className="antialiased">
+>>>>>>> 02d3f33 (Add frontend application)
         <SiteShell>{children}</SiteShell>
       </body>
     </html>

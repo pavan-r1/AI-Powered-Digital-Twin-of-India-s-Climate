@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 import {
   Thermometer,
   CloudRain,
@@ -157,4 +158,10 @@ export default function DashboardPage() {
       </div>
     </div>
   );
+=======
+import { DashboardPage } from "@/components/dashboard-page";
+
+export default function DashboardRoute() {
+  return <DashboardPage />;
+>>>>>>> 02d3f33 (Add frontend application)
 }

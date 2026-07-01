@@ -1,4 +1,5 @@
 import { ClimateTrendChart } from "@/components/climate-visuals";
+<<<<<<< HEAD
 import { PageHeading, Panel, StatPill } from "@/components/page-panels";
 import {
   Activity,
@@ -139,6 +140,27 @@ export default function AnalyticsPage() {
               </tr>
             </tbody>
           </table>
+=======
+import { PageHeading, Panel } from "@/components/page-panels";
+
+export default function AnalyticsPage() {
+  return (
+    <div className="space-y-4">
+      <Panel>
+        <PageHeading title="Analytics" subtitle="Trend charts, model comparison, and climate performance summaries." />
+        <div className="mt-4 grid gap-4 xl:grid-cols-[1.4fr_0.6fr]">
+          <ClimateTrendChart />
+          <div className="space-y-4 rounded-[1.5rem] border border-slate-200 bg-slate-50 p-4 dark:border-white/10 dark:bg-white/5">
+            <div className="rounded-2xl bg-white p-4 dark:bg-slate-950/60">
+              <p className="text-sm text-slate-500 dark:text-slate-300">Model Comparison</p>
+              <p className="mt-2 text-2xl font-semibold">Transformer 94%</p>
+            </div>
+            <div className="rounded-2xl bg-white p-4 dark:bg-slate-950/60">
+              <p className="text-sm text-slate-500 dark:text-slate-300">Prediction Accuracy</p>
+              <p className="mt-2 text-2xl font-semibold">92%</p>
+            </div>
+          </div>
+>>>>>>> 02d3f33 (Add frontend application)
         </div>
       </Panel>
     </div>
