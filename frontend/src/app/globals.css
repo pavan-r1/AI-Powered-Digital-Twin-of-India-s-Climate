@@ -1,0 +1,112 @@
+@import "leaflet/dist/leaflet.css";
+@import "tailwindcss";
+
+:root {
+	color-scheme: dark;
+	--background: #07121f;
+	--foreground: #eaf4ff;
+	--panel: rgba(10, 23, 37, 0.68);
+	--panel-strong: rgba(10, 23, 37, 0.88);
+	--line: rgba(177, 219, 255, 0.14);
+	--accent: #34d4c5;
+	--accent-strong: #71c4ff;
+	--warning: #f5ad5d;
+	--success: #65e6a3;
+	--radius-card: 18px;
+}
+
+@layer base {
+	html {
+		scroll-behavior: smooth;
+		font-family: Inter, Poppins, "Segoe UI", system-ui, -apple-system, sans-serif;
+	}
+
+	body {
+		min-height: 100vh;
+		background:
+			radial-gradient(circle at top left, rgba(52, 212, 197, 0.2), transparent 28%),
+			radial-gradient(circle at top right, rgba(113, 196, 255, 0.16), transparent 24%),
+			radial-gradient(circle at center, rgba(15, 118, 255, 0.08), transparent 35%),
+			linear-gradient(180deg, #07121f 0%, #091826 40%, #050b12 100%);
+		color: var(--foreground);
+		font-family: inherit;
+	}
+
+	* {
+		border-color: var(--line);
+	}
+
+	::selection {
+		background: rgba(52, 212, 197, 0.35);
+		color: white;
+	}
+
+	input,
+	select,
+	button,
+	textarea {
+		font: inherit;
+	}
+}
+
+@layer utilities {
+	.glass-panel {
+		background: var(--panel);
+		border: 1px solid rgba(255, 255, 255, 0.1);
+		backdrop-filter: blur(22px);
+		box-shadow: 0 20px 80px rgba(3, 12, 19, 0.28);
+	}
+
+	.glass-panel-strong {
+		background: var(--panel-strong);
+		border: 1px solid rgba(255, 255, 255, 0.12);
+		backdrop-filter: blur(28px);
+		box-shadow: 0 24px 96px rgba(3, 12, 19, 0.34);
+	}
+
+	.climate-ring {
+		background: linear-gradient(135deg, rgba(52, 212, 197, 0.16), rgba(113, 196, 255, 0.18));
+	}
+
+	.soft-grid {
+		background-image: linear-gradient(rgba(148, 163, 184, 0.08) 1px, transparent 1px), linear-gradient(90deg, rgba(148, 163, 184, 0.08) 1px, transparent 1px);
+		background-size: 24px 24px;
+	}
+
+	.animate-fade-in-up {
+		animation: fade-in-up 0.45s ease both;
+	}
+
+	.animate-pop {
+		animation: pop 0.55s ease both;
+	}
+
+	.text-gradient {
+		background: linear-gradient(90deg, #e9ffff, #7ff0df 45%, #7fc8ff 100%);
+		-webkit-background-clip: text;
+		background-clip: text;
+		color: transparent;
+	}
+
+	@keyframes fade-in-up {
+		from {
+			opacity: 0;
+			transform: translateY(10px);
+		}
+		to {
+			opacity: 1;
+			transform: translateY(0);
+		}
+	}
+
+	@keyframes pop {
+		from {
+			opacity: 0;
+			transform: scale(0.98);
+		}
+		to {
+			opacity: 1;
+			transform: scale(1);
+		}
+	}
+}
